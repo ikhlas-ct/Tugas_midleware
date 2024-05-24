@@ -24,7 +24,6 @@ class KucingControllerPost extends Controller
 
         return view('posts.index',compact('posts'));
     }
-
     public function create() {
         return view('posts.create');
     }

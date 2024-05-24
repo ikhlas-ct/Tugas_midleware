@@ -23,6 +23,8 @@ class KucingController extends Controller
             'stock' => 'required|numeric',
             'kondisi' => 'required',
             'deskripsi' => 'required',
+            
+
         ], [
             'gambar.required' => 'Gambar harus diisi.',
             'nama.required' => 'Nama harus diisi.',

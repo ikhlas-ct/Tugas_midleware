@@ -86,6 +86,7 @@
                             {{ $errors->first('deskripsi') }}
                         </div>
                     @endif
+                    
                 </div>
 
                 <div class="text-center">
@@ -93,6 +94,17 @@
                 </div>
 
             </form>
+        </div>
+    </div>
+
+    <div class="modal-fade" id="postmodal" tabindex="1" aria-labelledby="postModallabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <h5></h5>
+                </div>
+
+            </div> 
         </div>
     </div>
 </div>

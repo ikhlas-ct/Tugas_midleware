@@ -31,13 +31,23 @@
             </thead>
             <tbody>
                 @foreach ($posts as $post)
-                    <tr>
+                    <tr class="fw-semibold text-center">
                         <td>{{ $loop->iteration + $posts->firstItem() - 1 }}</td>
                         <td>{{ $post->nama }}</td>
                         <td>{{ $post->stock }}</td>
                         <td>{{ $post->berat }}</td>
                         <td>{{ $post->harga }}</td>
-                        <td>{{ $post->kondisi }}</td>
+                        <td>
+                            @if ($post->kondisi == "baru")
+                            <span class="badge bg-success font-weight-bold px-4 py-2 m-1 fs-6">{{ $post->kondisi }}</span>
+                            @elseif ($post->kondisi == "lama")
+                                <span class="badge bg-secondary px-4 py-2 m-1 fs-6">{{ $post->kondisi }}</span>
+                            @elseif ($post->kondisi == "bekas")
+                                <span class="badge bg-warning text-dark px-4 py-2 m-1 fs-6">{{ $post->kondisi }}</span>
+                            @else
+                                <span>{{ $post->kondisi }}</span>
+                            @endif
+                        </td>
                         <td class="justify-content-md-between text-center"> 
                             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning">Update</a>
                             <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="d-inline">

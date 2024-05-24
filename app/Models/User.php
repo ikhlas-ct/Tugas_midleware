@@ -44,4 +44,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    
+    public function summarize(){
+        return $this->hasOne(UserSummarize::class, 'user_id', 'id');
+    }
+
+    public function products(){
+        return $this->hasMany(Product::class, 'user_id', 'id');
+    }
+
 }
